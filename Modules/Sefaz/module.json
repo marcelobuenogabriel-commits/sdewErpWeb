@@ -1,0 +1,11 @@
+{
+    "name": "Sefaz",
+    "alias": "sefaz",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Sefaz\\App\\Providers\\SefazServiceProvider"
+    ],
+    "files": []
+}

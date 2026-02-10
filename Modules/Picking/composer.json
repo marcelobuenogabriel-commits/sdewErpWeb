@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/picking",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Picking\\": "",
+            "Modules\\Picking\\App\\": "app/",
+            "Modules\\Picking\\Database\\Factories\\": "database/factories/",
+            "Modules\\Picking\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Picking\\Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/webservice",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\WebService\\": "",
+            "Modules\\WebService\\App\\": "app/",
+            "Modules\\WebService\\Database\\Factories\\": "database/factories/",
+            "Modules\\WebService\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\WebService\\Tests\\": "tests/"
+        }
+    }
+}

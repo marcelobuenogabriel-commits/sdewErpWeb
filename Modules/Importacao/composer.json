@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/importacao",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Importacao\\": "",
+            "Modules\\Importacao\\App\\": "app/",
+            "Modules\\Importacao\\Database\\Factories\\": "database/factories/",
+            "Modules\\Importacao\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Importacao\\Tests\\": "tests/"
+        }
+    }
+}

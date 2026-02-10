@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/sefaz",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Sefaz\\": "",
+            "Modules\\Sefaz\\App\\": "app/",
+            "Modules\\Sefaz\\Database\\Factories\\": "database/factories/",
+            "Modules\\Sefaz\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Sefaz\\Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/recebimento",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Recebimento\\": "",
+            "Modules\\Recebimento\\App\\": "app/",
+            "Modules\\Recebimento\\Database\\Factories\\": "database/factories/",
+            "Modules\\Recebimento\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Recebimento\\Tests\\": "tests/"
+        }
+    }
+}

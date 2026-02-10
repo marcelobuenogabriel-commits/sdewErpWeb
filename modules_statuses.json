@@ -1,0 +1,14 @@
+{
+    "Picking": true,
+    "Inventario": true,
+    "Recebimento": true,
+    "WebService": true,
+    "Lista": true,
+    "FunctionCenter": true,
+    "Report": true,
+    "Sefaz": true,
+    "Financeiro": true,
+    "Producao": true,
+    "Importacao": true,
+    "KPI": true
+}

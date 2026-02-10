@@ -1,0 +1,36 @@
+.table {
+    font-size: 0.9rem !important;
+}
+
+@media (min-width: 1440px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1440px;
+    }
+
+    #b-display {
+        display: inline !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .dataTables_filter > label {
+        font-size: 0;
+    } 
+
+    .dataTables_filter > label > input {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    #table_itens_paginate {
+        display: none !important;
+    }
+
+    h4, h6 {
+        text-align: center !important;
+    }
+}
+
+a {
+    color: #c59607;
+}

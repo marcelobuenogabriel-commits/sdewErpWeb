@@ -1,0 +1,11 @@
+{
+    "name": "Picking",
+    "alias": "picking",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Picking\\App\\Providers\\PickingServiceProvider"
+    ],
+    "files": []
+}

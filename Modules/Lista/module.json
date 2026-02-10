@@ -1,0 +1,11 @@
+{
+    "name": "Lista",
+    "alias": "lista",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Lista\\App\\Providers\\ListaServiceProvider"
+    ],
+    "files": []
+}

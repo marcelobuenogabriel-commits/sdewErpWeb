@@ -1,0 +1,11 @@
+{
+    "name": "Recebimento",
+    "alias": "recebimento",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Recebimento\\App\\Providers\\RecebimentoServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "WebService",
+    "alias": "webservice",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\WebService\\App\\Providers\\WebServiceServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,25 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.11.6",
+        "@vitejs/plugin-vue": "^5.0.3",
+        "axios": "^1.6.4",
+        "bootstrap": "^5.2.3",
+        "jquery-mask-plugin": "^1.14.16",
+        "laravel-vite-plugin": "^1.0.1",
+        "sass": "^1.56.1",
+        "source-map-support": "^0.5.21",
+        "vite": "^5.4.20"
+    },
+    "dependencies": {
+        "jquery": "^3.7.1",
+        "jquery-maskmoney": "^3.0.2",
+        "swal": "^0.1.0",
+        "sweetalert": "^2.1.2"
+    }
+}

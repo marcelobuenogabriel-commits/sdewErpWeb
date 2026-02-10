@@ -1,0 +1,11 @@
+{
+    "name": "FunctionCenter",
+    "alias": "functioncenter",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\FunctionCenter\\App\\Providers\\FunctionCenterServiceProvider"
+    ],
+    "files": []
+}
