@@ -25,7 +25,7 @@ class WebServicePreFaturaController extends Controller
                     'prCallMode' => 1,
                     'FlowName' => '',
                     'FlowInstanceID' => '',
-                    'prPrintDest' => '\\\\KNBRPR01\\PRBR010',
+                    'prPrintDest' => '\\\\KNBRPR01\\PRBR006',
                     'prExecFmt' => 'tefPrint',
                     'prRelatorio' => 'RFEX103.GER',
                     'prEntranceIsXML' => 'F',

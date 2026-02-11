@@ -10,35 +10,55 @@ class PreFatura extends Model
 {
     public function getPrefaturas()
     {
-        return DB::table('E135PFA')
+        $epdAgg = DB::table('E135EPD as EPD')
             ->select([
-                'E135PFA.codemp',
-                'E135PFA.numane',
-                'E135PFA.numpfa',
-                'E135PFA.codcli',
-                'E085CLI.nomcli',
-                'E135PFA.sitpfa',
-                DB::raw('SUM(E135PES.qtdppf) AS qtd_prefatura_total'),
-                DB::raw('SUM(COALESCE(E135EPD.qtdpro, 0)) AS qtd_embalada_total'),
-                DB::raw('SUM(COALESCE(E135EPD.qtdpro, 0)) - SUM(E135PES.qtdppf) AS dif_emb_minus_pref')
+                'EPD.codemp',
+                'EPD.numane',
+                'EPD.numpfa',
+                'EPD.SEQPES',
+                DB::raw('SUM(EPD.qtdpro) AS qtdpro_total'),
             ])
-            ->join('E135PES', function($join){
-                $join->on('E135PFA.codemp', '=', 'E135PES.codemp')
-                    ->on('E135PFA.numane', '=', 'E135PES.numane')
-                    ->on('E135PFA.numpfa', '=', 'E135PES.numpfa');
+            ->groupBy([
+                'EPD.codemp',
+                'EPD.numane',
+                'EPD.numpfa',
+                'EPD.SEQPES',
+            ]);
+
+        return DB::table('E135PFA as PFA')
+            ->join('E135PES as PES', function ($join) {
+                $join->on('PFA.codemp', '=', 'PES.codemp')
+                    ->on('PFA.numane', '=', 'PES.numane')
+                    ->on('PFA.numpfa', '=', 'PES.numpfa');
             })
-            ->leftJoin('E135EPD', function($join){
-                $join->on('E135PFA.codemp', '=', 'E135EPD.codemp')
-                    ->on('E135PFA.numane', '=', 'E135EPD.numane')
-                    ->on('E135PFA.numpfa', '=', 'E135EPD.numpfa')
-                    ->on('E135PES.SEQPES', '=', 'E135EPD.SEQPES');
+            ->leftJoinSub($epdAgg, 'EPD', function ($join) {
+                $join->on('PFA.codemp', '=', 'EPD.codemp')
+                    ->on('PFA.numane', '=', 'EPD.numane')
+                    ->on('PFA.numpfa', '=', 'EPD.numpfa')
+                    ->on('PES.SEQPES', '=', 'EPD.SEQPES');
             })
-            ->join('E085CLI', function($join){
-                $join->on('E135PFA.codcli', '=', 'E085CLI.codcli');
-            })
-            ->whereIn('E135PFA.sitpfa', [2, 3])
-            ->groupBy('E135PFA.codemp', 'E135PFA.numane', 'E135PFA.numpfa', 'E135PFA.codcli', 'E085CLI.nomcli', 'E135PFA.sitpfa')
-            ->havingRaw('SUM(COALESCE(E135EPD.qtdpro, 0)) <> SUM(E135PES.qtdppf)')
+            ->join('E085CLI as CLI', 'PFA.codcli', '=', 'CLI.codcli')
+            ->whereIn('PFA.sitpfa', [2, 3])
+            ->select([
+                'PFA.codemp',
+                'PFA.numane',
+                'PFA.numpfa',
+                'PFA.codcli',
+                'CLI.nomcli',
+                'PFA.sitpfa',
+            ])
+            ->selectRaw('SUM(PES.qtdppf) AS qtd_prefatura_total')
+            ->selectRaw('SUM(COALESCE(EPD.qtdpro_total, 0)) AS qtd_embalada_total')
+            ->selectRaw('SUM(COALESCE(EPD.qtdpro_total, 0)) - SUM(PES.qtdppf) AS dif_emb_minus_pref')
+            ->groupBy([
+                'PFA.codemp',
+                'PFA.numane',
+                'PFA.numpfa',
+                'PFA.codcli',
+                'CLI.nomcli',
+                'PFA.sitpfa',
+            ])
+            ->havingRaw('SUM(COALESCE(EPD.qtdpro_total, 0)) <> SUM(PES.qtdppf)')
             ->get();
     }
 

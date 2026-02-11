@@ -106,7 +106,8 @@
                                         {{
                                             Form::number('pesbru', null,  ['class' =>  'form-control'. ($errors->has('pesbru')? ' is-invalid':NULL),
                                                                             'placeholder' => 'Peso Bruto',
-                                                                            'required' => 'required'
+                                                                            'required' => 'required',
+                                                                            'step' => '0.001'
                                                                         ]
                                                         )
                                         }}
@@ -122,7 +123,8 @@
                                         {{
                                             Form::number('pesliq', null,  ['class' =>  'form-control'. ($errors->has('pesliq')? ' is-invalid':NULL),
                                                                             'placeholder' => 'Peso Líquido',
-                                                                            'required' => 'required'
+                                                                            'required' => 'required',
+                                                                            'step' => '0.001'
                                                                         ]
                                                         )
                                         }}
